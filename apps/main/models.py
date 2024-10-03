@@ -6,14 +6,17 @@ class BaseModel(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    title_ru = models.CharField(max_length=256, verbose_name="Слоган на русском", default="test")
+    title_uz = models.CharField(max_length=256, verbose_name="Слоган на узбекском", default="test")
+    title_en = models.CharField(max_length=256, verbose_name="Слоган на английском", default="test")
+
 
     class Meta:
         abstract = True
 
 
-
 class Maintitle(BaseModel):
-    title = models.CharField(max_length=256, verbose_name="Слоган")
+
 
     def __str__(self):
         return "Слоган"
@@ -23,7 +26,7 @@ class Maintitle(BaseModel):
         verbose_name_plural = "Заголовок сайта"
 
 
-class Contacts(BaseModel):
+class Contacts(models.Model):
     first_contact = models.CharField(max_length=256, verbose_name="первый контакт")
     second_contact = models.CharField(max_length=256, verbose_name="второй контакт")
 
@@ -36,12 +39,13 @@ class Contacts(BaseModel):
 
 
 class Banners(BaseModel):
-    title = models.CharField(max_length=256, verbose_name="Заголовок")
     img = models.ImageField(upload_to="img/banners/", verbose_name="Фото")
-    description = models.TextField(verbose_name="Описание")
+    description_uz = models.TextField(verbose_name="Описание на узбекском", default="test")
+    description_en = models.TextField(verbose_name="Описание на английском", default="test")
+    description_ru = models.TextField(verbose_name="Описание на русском", default="test")
 
     def __str__(self):
-        return f"карусель: {self.title}"
+        return f"карусель: {self.title_ru}"
 
     class Meta:
         verbose_name = "Карусель"
@@ -49,11 +53,10 @@ class Banners(BaseModel):
 
 
 class Projects(BaseModel):
-    title = models.CharField(max_length=256, verbose_name="Заголовок")
     img = models.ImageField(upload_to="img/banners/", verbose_name="фото")
 
     def __str__(self):
-        return f"проект: {self.title}"
+        return f"проект: {self.title_ru}"
 
     class Meta:
         verbose_name = "Проекты"
@@ -61,7 +64,6 @@ class Projects(BaseModel):
 
 
 class Collections(BaseModel):
-    title = models.CharField(max_length=256, verbose_name="Заголовок")
     img = models.ImageField(upload_to="img/collections/", verbose_name="фото")
 
     def __str__(self):
@@ -73,12 +75,13 @@ class Collections(BaseModel):
 
 
 class Services(BaseModel):
-    title = models.CharField(max_length=256, verbose_name="Заголовок")
     img = models.ImageField(upload_to="img/Service/", verbose_name="фото")
-    description = models.TextField(verbose_name="Описание")
+    description_uz = models.TextField(verbose_name="Описание на узбекском", default="test")
+    description_en = models.TextField(verbose_name="Описание на английском", default="test")
+    description_ru = models.TextField(verbose_name="Описание на русском", default="test")
 
     def __str__(self):
-        return f"Услуга: {self.title}"
+        return f"Услуга: {self.title_ru}"
 
     class Meta:
         verbose_name = "Сервис"
