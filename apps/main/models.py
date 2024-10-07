@@ -85,6 +85,6 @@ class Services(BaseModel):
         return f"Услуга: {self.title_ru}"
 
     class Meta:
-        verbose_name = "Сервис"
-        verbose_name_plural = "Сервис"
+        verbose_name = "Услуги"
+        verbose_name_plural = "Услуги"
 
