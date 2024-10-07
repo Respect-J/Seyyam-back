@@ -63,8 +63,8 @@ class Projects(BaseModel):
         verbose_name_plural = "Проекты"
 
 
-class Collections(BaseModel):
-    numimg = models.CharField(max_length=1, default="1", verbose_name="Слоган на русском")
+class Collections(models.Model):
+    numimg = models.CharField(max_length=1, default="1", verbose_name="номер фото")
     img = models.ImageField(upload_to="img/collections/", verbose_name="фото")
 
     def __str__(self):
