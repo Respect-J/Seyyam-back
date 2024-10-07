@@ -64,10 +64,11 @@ class Projects(BaseModel):
 
 
 class Collections(BaseModel):
+    numimg = models.CharField(max_length=1, verbose_name="Слоган на русском")
     img = models.ImageField(upload_to="img/collections/", verbose_name="фото")
 
     def __str__(self):
-        return "наши коллекции"
+        return f"фото под номером {self.numimg}"
 
     class Meta:
         verbose_name = "Коллекции фото"
