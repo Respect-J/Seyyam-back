@@ -154,5 +154,5 @@ STATIC_URL = "static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = "media/"
-# MEDIA_ROOT = "/home/legacyex/back.legacy-ex.com/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = "/home/host5460/back.seyyamgroup.uz/media/"
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
