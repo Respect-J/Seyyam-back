@@ -64,7 +64,7 @@ class Projects(BaseModel):
 
 
 class Collections(BaseModel):
-    numimg = models.CharField(max_length=1, verbose_name="Слоган на русском")
+    numimg = models.CharField(max_length=1, default="1", verbose_name="Слоган на русском")
     img = models.ImageField(upload_to="img/collections/", verbose_name="фото")
 
     def __str__(self):
