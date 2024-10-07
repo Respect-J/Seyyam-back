@@ -1,4 +1,4 @@
-from .models import Collections, Services, Contacts, Banners, Projects, Maintitle
+from .models import Collections, Services, Contacts, About, Projects, Maintitle
 from .serializers import CollectionsSerializer, ServicesSerializer, ContactsSerializer, BannersSerializer, \
     ProjectsSerializer, MaintitleSerializer
 from rest_framework import generics
@@ -25,7 +25,7 @@ class ProjectsListView(generics.ListAPIView):
 
 
 class BannersListView(generics.ListAPIView):
-    queryset = Banners.objects.all()
+    queryset = About.objects.all()
     serializer_class = BannersSerializer
 
 

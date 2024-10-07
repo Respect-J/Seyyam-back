@@ -1,4 +1,4 @@
-from .models import Collections, Services, Contacts, Banners, Projects, Maintitle
+from .models import Collections, Services, Contacts, About, Projects, Maintitle
 from rest_framework import serializers
 
 
@@ -22,7 +22,7 @@ class ContactsSerializer(serializers.ModelSerializer):
 
 class BannersSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Banners
+        model = About
         fields = "__all__"
 
 

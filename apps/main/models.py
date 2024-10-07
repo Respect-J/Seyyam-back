@@ -38,18 +38,18 @@ class Contacts(models.Model):
         verbose_name_plural = "Контакты"
 
 
-class Banners(BaseModel):
+class About(BaseModel):
     img = models.ImageField(upload_to="img/banners/", verbose_name="Фото")
     description_uz = models.TextField(verbose_name="Описание на узбекском", default="test")
     description_en = models.TextField(verbose_name="Описание на английском", default="test")
     description_ru = models.TextField(verbose_name="Описание на русском", default="test")
 
     def __str__(self):
-        return f"карусель: {self.title_ru}"
+        return f"раздел: {self.title_ru}"
 
     class Meta:
-        verbose_name = "Карусель"
-        verbose_name_plural = "Карусель"
+        verbose_name = "Раздел о нас"
+        verbose_name_plural = "Раздел о нас"
 
 
 class Projects(BaseModel):
