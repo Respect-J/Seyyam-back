@@ -53,7 +53,7 @@ class About(BaseModel):
 
 
 class Projects(BaseModel):
-    img = models.ImageField(upload_to="img/banners/", verbose_name="фото")
+    img = models.ImageField(upload_to="img/projects/", verbose_name="фото")
 
     def __str__(self):
         return f"проект: {self.title_ru}"
