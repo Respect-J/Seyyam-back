@@ -29,6 +29,6 @@ class BannersListView(generics.ListAPIView):
     serializer_class = BannersSerializer
 
 
-class MaintitleListView(generics.ListAPIView):
+class MaintitleListView(generics.ListCreateAPIView):
     queryset = Maintitle.objects.all()
     serializer_class = MaintitleSerializer
