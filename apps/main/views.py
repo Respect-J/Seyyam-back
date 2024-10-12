@@ -19,7 +19,7 @@ class ContactsListView(generics.ListAPIView):
     serializer_class = ContactsSerializer
 
 
-class ProjectsListView(generics.ListAPIView):
+class ProjectsListView(generics.ListCreateAPIView):
     queryset = Projects.objects.all()
     serializer_class = ProjectsSerializer
 
@@ -29,6 +29,6 @@ class BannersListView(generics.ListAPIView):
     serializer_class = BannersSerializer
 
 
-class MaintitleListView(generics.ListCreateAPIView):
+class MaintitleListView(generics.ListAPIView):
     queryset = Maintitle.objects.all()
     serializer_class = MaintitleSerializer
